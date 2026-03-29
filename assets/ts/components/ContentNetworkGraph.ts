@@ -5,17 +5,9 @@ import { GraphData } from '../lib/types';
 const NETWORK_OPTIONS: Options = {
   nodes: {
     shape: 'dot',
-    color: {
-      background: '#404040',
-      border: '#404040',
-      hover: {
-        background: '#3b82f6',
-        border: '#2563eb'
-      }
-    },
     font: {
       face: "'LatoLatinWeb', sans-serif",
-      color: '#0f172a',
+      color: '#F8F8F2',
       size: 11
     },
     scaling: {
@@ -25,16 +17,23 @@ const NETWORK_OPTIONS: Options = {
   },
   edges: {
     color: {
-      color: '#d4d4d4',
-      hover: '#3b82f6'
+      color: '#6272A4',
+      hover: '#8BE9FD'
     },
     hoverWidth: 0,
     smooth: false
   },
   groups: {
-    useDefaultGroups: false,
-    posts: {},
-    notes: {}
+    notes: {
+      color: {
+        background: "#F1FA8C"
+      }
+    },
+    posts: {
+      color: {
+        background: "#BD93F9"
+      }
+    }
   },
   interaction: {
     hover: true
@@ -43,11 +42,11 @@ const NETWORK_OPTIONS: Options = {
 
 const FADED_NODE_OPTIONS: NodeOptions = {
   color: {
-    background: '#d4d4d4',
-    border: '#d4d4d4'
+    background: '#282A36',
+    border: '#F8F8F2'
   },
   font: {
-    color: '#d4d4d4'
+    color: '#282A36'
   }
 };
 
@@ -145,8 +144,7 @@ export default class ContentNetworkGraph extends HTMLElement {
       'border',
       'border-neutral-200',
       'rounded-sm',
-      'block',
-      'bg-white'
+      'block'
     );
     this._networkEl = document.createElement('div');
     this._messageEl = document.createElement('div');
@@ -276,7 +274,6 @@ export default class ContentNetworkGraph extends HTMLElement {
 
     const expandBtn = document.createElement('button');
     expandBtn.classList.add(
-      'bg-white',
       'border',
       'rounded-sm',
       'p-1',
