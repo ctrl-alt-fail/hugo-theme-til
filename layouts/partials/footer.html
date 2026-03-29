@@ -1,5 +1,5 @@
 {{- $license := default "none" site.Params.footer.creativeCommonsLicense -}}
-{{- $licenseData := index site.Data.til.cc $license -}}
+{{- $licenseData := index hugo.Data.til.cc $license -}}
 {{- $showCopyright := and site.Copyright ( ne $license "zero" ) -}}
 <section class="items-top flex flex-row justify-between opacity-70">
   <div class="flex flex-col space-y-2">
@@ -40,9 +40,9 @@
   {{- if default true site.Params.footer.showThemeCredit }}
     <div>
       <a
-        href="{{ site.Data.til.meta.themeUrl }}"
-        title="{{ site.Data.til.meta.themeName }} &#8212; A Hugo theme by Michael Henriksen"
-        data-theme-version="{{ site.Data.til.meta.themeVersion }}"
+        href="{{ hugo.Data.til.meta.themeUrl }}"
+        title="{{ hugo.Data.til.meta.themeName }} &#8212; A Hugo theme by Michael Henriksen"
+        data-theme-version="{{ hugo.Data.til.meta.themeVersion }}"
         >theme: til</a
       >
     </div>

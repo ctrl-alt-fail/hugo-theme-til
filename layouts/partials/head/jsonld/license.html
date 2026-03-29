@@ -1,5 +1,5 @@
 {{- $license := default "none" site.Params.footer.creativeCommonsLicense -}}
-{{- $licenseData := index site.Data.cc $license -}}
+{{- $licenseData := index hugo.Data.cc $license -}}
 {{- $showCopyright := and site.Copyright ( ne $license "zero" ) -}}
 {{- $data := dict -}}
 {{- if $showCopyright -}}
